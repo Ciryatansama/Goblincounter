@@ -36,6 +36,14 @@ export default function GoblinCounter() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-950 via-red-950 to-orange-950 text-white flex items-center justify-center p-4">
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
+          .jacquard-font {
+            font-family: 'Jacquard 12', serif;
+          }
+        `}
+      </style>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -88,7 +96,7 @@ export default function GoblinCounter() {
 
             <div className="flex items-center justify-between bg-white/5 rounded-xl px-4 py-3 border border-white/10">
               <span className="text-orange-100/80">Total Goblins</span>
-              <span className="text-2xl font-black">{total}</span>
+              <span className="text-2xl font-black jacquard-font">{total}</span>
             </div>
 
             <Button
@@ -113,7 +121,7 @@ function CounterBox({ label, value, onPlus, onMinus, tapped = false }) {
         key={value}
         initial={{ scale: 0.9 }}
         animate={{ scale: 1 }}
-        className={`text-6xl font-black ${tapped ? "rotate-12 text-orange-300" : "text-emerald-300"}`}
+        className={`text-6xl font-black jacquard-font ${tapped ? "rotate-12 text-orange-300" : "text-emerald-300"}`}
       >
         {value}
       </motion.div>
